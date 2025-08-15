@@ -227,7 +227,7 @@ function App() {
           </div>
 
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 md:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
               <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
                   Experience Stories Like Never Before
@@ -263,7 +263,17 @@ function App() {
                 </div>
               </div>
               
-              <KultripWidget />
+              <div className="relative">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 rounded-2xl"
+                  style={{
+                    backgroundImage: 'url(https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800)'
+                  }}
+                />
+                <div className="relative z-10">
+                  <KultripWidget />
+                </div>
+              </div>
               
               <div className="text-center mt-4">
                 <p className="text-sm text-gray-500 italic">
