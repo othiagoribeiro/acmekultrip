@@ -145,7 +145,7 @@ function App() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+            backgroundImage: 'url(/src/assets/Foto-Capa-Kultrip-10---Chile.png)',
             transform: `translateY(${scrollY * 0.5}px)`
           }}
         />
