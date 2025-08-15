@@ -429,9 +429,14 @@ function App() {
             <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Start Planning Now
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
+            <a 
+              href="https://cal.com/kultrip/oportunidad-de-inversion?" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block text-center"
+            >
               Schedule Consultation
-            </button>
+            </a>
           </div>
         </div>
       </section>
