@@ -108,7 +108,9 @@ function App() {
                   scrollY > 50 ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'
                 }`}>Reviews</a>
                 <a href="#contact" className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">
-                  Plan Your Journey
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg">
+                    Plan Your Journey
+                  </span>
                 </a>
               </div>
             </div>
@@ -133,7 +135,9 @@ function App() {
               <a href="#destinations" className="block px-3 py-2 text-gray-900 hover:text-blue-600">Destinations</a>
               <a href="#testimonials" className="block px-3 py-2 text-gray-900 hover:text-blue-600">Reviews</a>
               <a href="#contact" className="block px-3 py-2 bg-amber-500 text-white rounded-md mx-3 text-center">
-                Plan Your Journey
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-md text-center block">
+                  Plan Your Journey
+                </span>
               </a>
             </div>
           </div>
@@ -162,7 +166,7 @@ function App() {
               Step into the worlds you love and turn imagined places into real destinations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
                 Start Your Story Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
