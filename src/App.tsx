@@ -334,7 +334,7 @@ function App() {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Explore All Destinations
             </button>
           </div>
