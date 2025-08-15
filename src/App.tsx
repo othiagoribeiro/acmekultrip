@@ -213,6 +213,61 @@ function App() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section id="how-it-works" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              How It Works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Three simple steps to transform your favorite stories into real adventures
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-white">1</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Choose Your Story</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Tell us about your favorite book, movie, or TV show. Our Kultrip widget analyzes 
+                  the story's locations and themes.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center group">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
+                <div className="bg-gradient-to-r from-amber-500 to-amber-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-white">2</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Get Your Itinerary</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Receive a personalized travel plan featuring real-world locations from your story, 
+                  complete with activities and insider tips.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center group">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
+                <div className="bg-gradient-to-r from-green-600 to-green-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-white">3</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Live Your Adventure</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Embark on your story-inspired journey with full support, guided tours, 
+                  and exclusive experiences you won't find anywhere else.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Kultrip Widget Showcase */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,61 +323,6 @@ function App() {
               <div className="text-center mt-4">
                 <p className="text-sm text-gray-500 italic">
                   Powered by Kultrip and Your Imagination
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section id="how-it-works" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              How It Works
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Three simple steps to transform your favorite stories into real adventures
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-white">1</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Choose Your Story</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Tell us about your favorite book, movie, or TV show. Our Kultrip widget analyzes 
-                  the story's locations and themes.
-                </p>
-              </div>
-            </div>
-
-            <div className="text-center group">
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                <div className="bg-gradient-to-r from-amber-500 to-amber-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-white">2</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Get Your Itinerary</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Receive a personalized travel plan featuring real-world locations from your story, 
-                  complete with activities and insider tips.
-                </p>
-              </div>
-            </div>
-
-            <div className="text-center group">
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2">
-                <div className="bg-gradient-to-r from-green-600 to-green-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-white">3</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Live Your Adventure</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Embark on your story-inspired journey with full support, guided tours, 
-                  and exclusive experiences you won't find anywhere else.
                 </p>
               </div>
             </div>
