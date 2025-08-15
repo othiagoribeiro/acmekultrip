@@ -158,16 +158,13 @@ function App() {
               <span className="text-amber-400 block">Favorite Stories</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
-              Turn books, movies, and TV shows into unforgettable real-world adventures. 
-              Experience the magic of storytelling through travel with our innovative Kultrip widget.
+              Transform your favorite books, movies, and TV shows into unforgettable journeys you can live. 
+              Step into the worlds you love and turn imagined places into real destinations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
                 Start Your Story Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
-                Watch Demo
               </button>
             </div>
           </div>
@@ -221,7 +218,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Powered by <span className="text-blue-600">Kultrip Widget</span>
+              Experience Your Favorite Stories Like Never Before
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our revolutionary travel planning widget analyzes your favorite stories and creates 
