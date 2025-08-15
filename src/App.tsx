@@ -284,12 +284,12 @@ function App() {
               
               <KultripWidget />
             </div>
-            
-            <div className="text-center mt-8">
-              <p className="text-sm text-gray-500 italic">
-                Powered by Kultrip and Your Imagination
-              </p>
-            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-gray-500 italic">
+              Powered by Kultrip and Your Imagination
+            </p>
           </div>
         </div>
       </section>
@@ -335,7 +335,7 @@ function App() {
 
           <div className="text-center mt-12">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              Explore All Destinations
+              Explore Other Stories
             </button>
           </div>
         </div>
