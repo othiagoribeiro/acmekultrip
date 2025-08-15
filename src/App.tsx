@@ -233,7 +233,7 @@ function App() {
       </section>
 
       {/* Kultrip Widget Showcase */}
-      <section className="py-20 bg-white">
+      <section id="kultrip-widget" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -426,7 +426,10 @@ function App() {
             Your next chapter starts here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <button 
+              onClick={() => document.getElementById('kultrip-widget')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            >
               Start Planning Now
             </button>
             <a 
