@@ -87,7 +87,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Globe className={`h-8 w-8 mr-2 ${scrollY > 50 ? 'text-blue-600' : 'text-white'}`} />
+              <Globe className={`h-8 w-8 mr-2 ${scrollY > 50 ? 'text-purple-600' : 'text-white'}`} />
               <span className={`text-xl font-bold ${scrollY > 50 ? 'text-gray-900' : 'text-white'}`}>
                 Dreamm Travel
               </span>
@@ -450,7 +450,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center mb-4">
-                <Globe className="h-8 w-8 mr-2 text-blue-400" />
+                <Globe className="h-8 w-8 mr-2 text-purple-600" />
                 <span className="text-2xl font-bold">Dreamm Travel</span>
               </div>
               <p className="text-gray-400 mb-6 max-w-md">
