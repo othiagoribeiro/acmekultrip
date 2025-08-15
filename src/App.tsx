@@ -283,12 +283,12 @@ function App() {
               </div>
               
               <KultripWidget />
-              
-              <div className="text-center mt-4">
-                <p className="text-sm text-gray-500 italic">
-                  Powered by Kultrip and Your Imagination
-                </p>
-              </div>
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-sm text-gray-500 italic">
+                Powered by Kultrip and Your Imagination
+              </p>
             </div>
           </div>
         </div>
