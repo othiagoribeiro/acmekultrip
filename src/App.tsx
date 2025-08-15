@@ -214,15 +214,7 @@ function App() {
       </section>
 
       {/* Kultrip Widget Showcase */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-          style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1600)'
-          }}
-        />
-        
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -272,14 +264,22 @@ function App() {
               </div>
               
               <div className="relative">
-                <KultripWidget />
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 rounded-2xl"
+                  style={{
+                    backgroundImage: 'url(https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800)'
+                  }}
+                />
+                <div className="relative z-10">
+                  <KultripWidget />
+                </div>
               </div>
-            </div>
-            
-            <div className="text-center mt-4">
-              <p className="text-sm text-gray-500 italic">
-                Powered by Kultrip and Your Imagination
-              </p>
+              
+              <div className="text-center mt-4">
+                <p className="text-sm text-gray-500 italic">
+                  Powered by Kultrip and Your Imagination
+                </p>
+              </div>
             </div>
           </div>
         </div>
