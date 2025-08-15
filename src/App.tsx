@@ -384,21 +384,21 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">50,000+</div>
               <div className="text-gray-600">Happy Travelers</div>
             </div>
             <div className="text-center">
-              <div className="bg-amber-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">1,200+</div>
               <div className="text-gray-600">Stories Mapped</div>
             </div>
             <div className="text-center">
-              <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">150+</div>
