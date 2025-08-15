@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import KultripWidget from './components/KultripWidget';
+import heroImage from './assets/Foto-Capa-Kultrip-10---Chile.png';
 import { 
   Play, 
   BookOpen, 
@@ -145,7 +146,7 @@ function App() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80)',
+            backgroundImage: `url(${heroImage})`,
             transform: `translateY(${scrollY * 0.5}px)`
           }}
         />
