@@ -155,7 +155,7 @@ function App() {
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Travel Your
-              <span className="text-amber-400 block">Favorite Stories</span>
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">Favorite Stories</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               Transform your favorite books, movies, and TV shows into unforgettable journeys you can live. 
