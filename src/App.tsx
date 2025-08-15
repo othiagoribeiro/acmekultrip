@@ -107,7 +107,6 @@ function App() {
                 <a href="#testimonials" className={`px-3 py-2 text-sm font-medium transition-colors ${
                   scrollY > 50 ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'
                 }`}>Reviews</a>
-                <a href="#contact" className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">
                 <a href="#contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg">
                     Plan Your Journey
                 </a>
@@ -133,7 +132,6 @@ function App() {
               <a href="#how-it-works" className="block px-3 py-2 text-gray-900 hover:text-blue-600">How It Works</a>
               <a href="#destinations" className="block px-3 py-2 text-gray-900 hover:text-blue-600">Destinations</a>
               <a href="#testimonials" className="block px-3 py-2 text-gray-900 hover:text-blue-600">Reviews</a>
-              <a href="#contact" className="block px-3 py-2 bg-amber-500 text-white rounded-md mx-3 text-center">
               <a href="#contact" className="block px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md mx-3 text-center">
                   Plan Your Journey
               </a>
