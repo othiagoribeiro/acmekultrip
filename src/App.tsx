@@ -253,7 +253,7 @@ function App() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="bg-purple-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
                       <BookOpen className="h-4 w-4 text-white" />
                     </div>
                     <div>
@@ -262,7 +262,7 @@ function App() {
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="bg-amber-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="bg-purple-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
                       <Play className="h-4 w-4 text-white" />
                     </div>
                     <div>
