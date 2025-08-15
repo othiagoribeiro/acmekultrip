@@ -458,13 +458,13 @@ function App() {
                 storytelling through travel with our innovative approach.
               </p>
               <div className="flex space-x-4">
-                <div className="bg-blue-600 p-2 rounded-lg">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer">
                   <Heart className="h-5 w-5" />
                 </div>
-                <div className="bg-blue-600 p-2 rounded-lg">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer">
                   <Globe className="h-5 w-5" />
                 </div>
-                <div className="bg-blue-600 p-2 rounded-lg">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer">
                   <Mail className="h-5 w-5" />
                 </div>
               </div>
