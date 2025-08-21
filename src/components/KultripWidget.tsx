@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 import { 
   MapPin, 
   BookOpen, 
@@ -34,6 +35,7 @@ interface Preference {
 }
 
 const KultripWidget: React.FC = () => {
+  const { t } = useLanguage();
   const [currentStep, setCurrentStep] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -43,43 +45,43 @@ const KultripWidget: React.FC = () => {
   const [steps, setSteps] = useState<Step[]>([
     {
       id: 'destination',
-      question: "Hi there! 👋 I'm excited to help you create your story-inspired adventure! First, where would you like to travel?",
+      question: t('widget.chat.greeting'),
       type: 'destination',
       completed: false
     },
     {
       id: 'story-type',
-      question: "Perfect! Now, what type of story inspires your wanderlust?",
+      question: t('widget.chat.storyType'),
       type: 'story-type',
       completed: false
     },
     {
       id: 'story-title',
-      question: "Wonderful choice! What's the name of the book/movie/TV show that's calling to you?",
+      question: t('widget.chat.storyTitle'),
       type: 'story-title',
       completed: false
     },
     {
       id: 'preferences',
-      question: "Almost there! What experiences make your heart sing? Select all that appeal to you:",
+      question: t('widget.chat.preferences'),
       type: 'preferences',
       completed: false
     },
     {
       id: 'email',
-      question: "Amazing! Your personalized itinerary is ready. Where should I send it?",
+      question: t('widget.chat.email'),
       type: 'email',
       completed: false
     }
   ]);
 
   const [preferences, setPreferences] = useState<Preference[]>([
-    { id: 'gastronomy', label: 'Culinary Adventures', icon: <Utensils className="h-5 w-5" />, selected: false },
-    { id: 'sports', label: 'Active Experiences', icon: <Dumbbell className="h-5 w-5" />, selected: false },
-    { id: 'business', label: 'Professional Networking', icon: <Briefcase className="h-5 w-5" />, selected: false },
-    { id: 'photography', label: 'Photography Tours', icon: <Camera className="h-5 w-5" />, selected: false },
-    { id: 'music', label: 'Music & Arts', icon: <Music className="h-5 w-5" />, selected: false },
-    { id: 'romance', label: 'Romantic Getaways', icon: <Heart className="h-5 w-5" />, selected: false }
+    { id: 'gastronomy', label: t('widget.preferences.culinary'), icon: <Utensils className="h-5 w-5" />, selected: false },
+    { id: 'sports', label: t('widget.preferences.active'), icon: <Dumbbell className="h-5 w-5" />, selected: false },
+    { id: 'business', label: t('widget.preferences.business'), icon: <Briefcase className="h-5 w-5" />, selected: false },
+    { id: 'photography', label: t('widget.preferences.photography'), icon: <Camera className="h-5 w-5" />, selected: false },
+    { id: 'music', label: t('widget.preferences.music'), icon: <Music className="h-5 w-5" />, selected: false },
+    { id: 'romance', label: t('widget.preferences.romance'), icon: <Heart className="h-5 w-5" />, selected: false }
   ]);
 
   const storyTypes = [
@@ -88,6 +90,55 @@ const KultripWidget: React.FC = () => {
     { id: 'tv-show', label: 'TV Show', icon: <Tv className="h-6 w-6" />, color: 'bg-purple-500' }
   ];
 
+  // Atualiza as perguntas quando o idioma muda
+  useEffect(() => {
+    setSteps([
+      {
+        id: 'destination',
+        question: t('widget.chat.greeting'),
+        type: 'destination',
+        completed: steps[0]?.completed || false,
+        answer: steps[0]?.answer
+      },
+      {
+        id: 'story-type',
+        question: t('widget.chat.storyType'),
+        type: 'story-type',
+        completed: steps[1]?.completed || false,
+        answer: steps[1]?.answer
+      },
+      {
+        id: 'story-title',
+        question: t('widget.chat.storyTitle'),
+        type: 'story-title',
+        completed: steps[2]?.completed || false,
+        answer: steps[2]?.answer
+      },
+      {
+        id: 'preferences',
+        question: t('widget.chat.preferences'),
+        type: 'preferences',
+        completed: steps[3]?.completed || false,
+        answer: steps[3]?.answer
+      },
+      {
+        id: 'email',
+        question: t('widget.chat.email'),
+        type: 'email',
+        completed: steps[4]?.completed || false,
+        answer: steps[4]?.answer
+      }
+    ]);
+
+    setPreferences([
+      { id: 'gastronomy', label: t('widget.preferences.culinary'), icon: <Utensils className="h-5 w-5" />, selected: preferences[0]?.selected || false },
+      { id: 'sports', label: t('widget.preferences.active'), icon: <Dumbbell className="h-5 w-5" />, selected: preferences[1]?.selected || false },
+      { id: 'business', label: t('widget.preferences.business'), icon: <Briefcase className="h-5 w-5" />, selected: preferences[2]?.selected || false },
+      { id: 'photography', label: t('widget.preferences.photography'), icon: <Camera className="h-5 w-5" />, selected: preferences[3]?.selected || false },
+      { id: 'music', label: t('widget.preferences.music'), icon: <Music className="h-5 w-5" />, selected: preferences[4]?.selected || false },
+      { id: 'romance', label: t('widget.preferences.romance'), icon: <Heart className="h-5 w-5" />, selected: preferences[5]?.selected || false }
+    ]);
+  }, [t]);
   useEffect(() => {
     if (currentStep < steps.length) {
       setIsTyping(true);
@@ -192,15 +243,14 @@ const KultripWidget: React.FC = () => {
             <CheckCircle className="h-10 w-10 text-green-600" />
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Your Story Adventure Awaits! ✨
+            {t('widget.chat.completed.title')}
           </h3>
           <p className="text-gray-600 mb-6">
-            We've crafted a personalized itinerary inspired by your favorite story. 
-            Check your email for the complete adventure guide!
+            {t('widget.chat.completed.subtitle')}
           </p>
           
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mb-6">
-            <h4 className="font-semibold text-gray-900 mb-3">Your Adventure Summary:</h4>
+            <h4 className="font-semibold text-gray-900 mb-3">{t('widget.chat.summary')}</h4>
             <div className="space-y-2 text-sm text-left">
               <div><strong>Destination:</strong> {steps[0]?.answer}</div>
               <div><strong>Story Type:</strong> {steps[1]?.answer}</div>
@@ -215,10 +265,10 @@ const KultripWidget: React.FC = () => {
               onClick={resetWidget}
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
             >
-              Plan Another Adventure
+              {t('widget.chat.planAnother')}
             </button>
             <button className="border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-              Contact Agent
+              {t('widget.chat.contactAgent')}
             </button>
           </div>
         </div>
@@ -336,7 +386,9 @@ const KultripWidget: React.FC = () => {
                 onClick={handlePreferencesSubmit}
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center"
               >
-                Continue
+                {t('nav.howItWorks') === 'Como Funciona' ? 'Continuar' : 
+                 t('nav.howItWorks') === 'Cómo Funciona' ? 'Continuar' : 
+                 t('nav.howItWorks') === 'Wie es funktioniert' ? 'Weiter' : 'Continue'}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </div>
@@ -390,7 +442,9 @@ const KultripWidget: React.FC = () => {
               className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-300"
             >
               <ArrowLeft className="h-4 w-4 mr-1" />
-              Go back
+            {t('nav.howItWorks') === 'Como Funciona' ? 'Voltar' : 
+             t('nav.howItWorks') === 'Cómo Funciona' ? 'Volver' : 
+             t('nav.howItWorks') === 'Wie es funktioniert' ? 'Zurück' : 'Go back'}
             </button>
           )}
         </div>

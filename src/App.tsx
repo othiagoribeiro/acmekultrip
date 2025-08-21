@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from './contexts/LanguageContext';
 import KultripWidget from './components/KultripWidget';
+import LanguageSelector from './components/LanguageSelector';
 import heroImage from './assets/Foto-Capa-Kultrip-10---Chile.png';
 import { 
   Play, 
@@ -19,6 +21,7 @@ import {
 } from 'lucide-react';
 
 function App() {
+  const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
@@ -98,18 +101,19 @@ function App() {
               <div className="ml-10 flex items-baseline space-x-4">
                 <a href="#home" className={`px-3 py-2 text-sm font-medium transition-colors ${
                   scrollY > 50 ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'
-                }`}>Home</a>
+                }`}>{t('nav.home')}</a>
                 <a href="#how-it-works" className={`px-3 py-2 text-sm font-medium transition-colors ${
                   scrollY > 50 ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'
-                }`}>How It Works</a>
+                }`}>{t('nav.howItWorks')}</a>
                 <a href="#destinations" className={`px-3 py-2 text-sm font-medium transition-colors ${
                   scrollY > 50 ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'
-                }`}>Destinations</a>
+                }`}>{t('nav.destinations')}</a>
                 <a href="#testimonials" className={`px-3 py-2 text-sm font-medium transition-colors ${
                   scrollY > 50 ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'
-                }`}>Reviews</a>
+                }`}>{t('nav.reviews')}</a>
+                <LanguageSelector scrollY={scrollY} />
                 <a href="#contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg">
-                    Plan Your Journey
+                    {t('nav.planJourney')}
                 </a>
               </div>
             </div>
@@ -129,12 +133,15 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white shadow-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#home" className="block px-3 py-2 text-gray-900 hover:text-blue-600">Home</a>
-              <a href="#how-it-works" className="block px-3 py-2 text-gray-900 hover:text-blue-600">How It Works</a>
-              <a href="#destinations" className="block px-3 py-2 text-gray-900 hover:text-blue-600">Destinations</a>
-              <a href="#testimonials" className="block px-3 py-2 text-gray-900 hover:text-blue-600">Reviews</a>
+              <a href="#home" className="block px-3 py-2 text-gray-900 hover:text-blue-600">{t('nav.home')}</a>
+              <a href="#how-it-works" className="block px-3 py-2 text-gray-900 hover:text-blue-600">{t('nav.howItWorks')}</a>
+              <a href="#destinations" className="block px-3 py-2 text-gray-900 hover:text-blue-600">{t('nav.destinations')}</a>
+              <a href="#testimonials" className="block px-3 py-2 text-gray-900 hover:text-blue-600">{t('nav.reviews')}</a>
+              <div className="px-3 py-2">
+                <LanguageSelector scrollY={scrollY} />
+              </div>
               <a href="#contact" className="block px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md mx-3 text-center">
-                  Plan Your Journey
+                  {t('nav.planJourney')}
               </a>
             </div>
           </div>
@@ -155,16 +162,15 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Travel Your
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block">Stories</span>
+              {t('hero.title')}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block">{t('hero.titleHighlight')}</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-              Transform your favorite books, movies, and TV shows into unforgettable journeys you can live. 
-              Step into the worlds you love and turn imagined places into real destinations.
+              {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
-                Start Your Story Journey
+                {t('hero.cta')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
             </div>
@@ -183,10 +189,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              How It Works
+              {t('howItWorks.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Three simple steps to transform your favorite stories into real adventures
+              {t('howItWorks.subtitle')}
             </p>
           </div>
 
@@ -196,10 +202,9 @@ function App() {
                 <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-white">1</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Choose Your Story</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('howItWorks.step1.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Tell us about your favorite book, movie, or TV show. Our Kultrip widget analyzes 
-                  the story's locations and themes.
+                  {t('howItWorks.step1.description')}
                 </p>
               </div>
             </div>
@@ -209,10 +214,9 @@ function App() {
                 <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-white">2</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Get Your Itinerary</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('howItWorks.step2.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Receive a personalized travel plan featuring real-world locations from your story, 
-                  complete with activities and insider tips.
+                  {t('howItWorks.step2.description')}
                 </p>
               </div>
             </div>
@@ -222,10 +226,9 @@ function App() {
                 <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-white">3</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Live Your Adventure</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('howItWorks.step3.title')}</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Embark on your story-inspired journey with full support, guided tours, 
-                  and exclusive experiences you won't find anywhere else.
+                  {t('howItWorks.step3.description')}
                 </p>
               </div>
             </div>
@@ -238,11 +241,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Experience Your Favorite Stories Like Never Before
+              {t('widget.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our revolutionary travel planning widget analyzes your favorite stories and creates 
-              personalized itineraries that bring fiction to life.
+              {t('widget.subtitle')}
             </p>
           </div>
 
@@ -250,7 +252,7 @@ function App() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                  Experience Stories Like Never Before
+                  {t('widget.title')}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
@@ -258,8 +260,8 @@ function App() {
                       <BookOpen className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Literary Adventures</h4>
-                      <p className="text-gray-600">Walk in the footsteps of your favorite book characters</p>
+                      <h4 className="font-semibold text-gray-900">{t('widget.feature1.title')}</h4>
+                      <p className="text-gray-600">{t('widget.feature1.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -267,8 +269,8 @@ function App() {
                       <Play className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Cinematic Journeys</h4>
-                      <p className="text-gray-600">Visit iconic movie locations around the world</p>
+                      <h4 className="font-semibold text-gray-900">{t('widget.feature2.title')}</h4>
+                      <p className="text-gray-600">{t('widget.feature2.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -276,8 +278,8 @@ function App() {
                       <Tv className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">TV Show Tours</h4>
-                      <p className="text-gray-600">Explore the real-world settings of hit series</p>
+                      <h4 className="font-semibold text-gray-900">{t('widget.feature3.title')}</h4>
+                      <p className="text-gray-600">{t('widget.feature3.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -289,7 +291,7 @@ function App() {
           
           <div className="text-center mt-8">
             <p className="text-sm text-gray-500 italic">
-              Powered by Kultrip and Your Imagination
+              {t('widget.poweredBy')}
             </p>
           </div>
         </div>
@@ -300,10 +302,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Popular Story Destinations
+              {t('destinations.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the most requested story-inspired travel experiences
+              {t('destinations.subtitle')}
             </p>
           </div>
 
@@ -336,7 +338,7 @@ function App() {
 
           <div className="text-center mt-12">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-              Explore Other Stories
+              {t('destinations.cta')}
             </button>
           </div>
         </div>
@@ -347,10 +349,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              What Our Travelers Say
+              {t('testimonials.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real stories from real adventurers who've lived their favorite tales
+              {t('testimonials.subtitle')}
             </p>
           </div>
 
@@ -362,7 +364,11 @@ function App() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
+                <p className="text-gray-600 mb-6 leading-relaxed">"{
+                  index === 0 ? t('testimonials.sarah.text') :
+                  index === 1 ? t('testimonials.marco.text') :
+                  t('testimonials.lisa.text')
+                }"</p>
                 <div className="flex items-center">
                   <img 
                     src={testimonial.avatar} 
@@ -389,28 +395,28 @@ function App() {
                 <Users className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">50,000+</div>
-              <div className="text-gray-600">Happy Travelers</div>
+              <div className="text-gray-600">{t('stats.travelers')}</div>
             </div>
             <div className="text-center">
               <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">1,200+</div>
-              <div className="text-gray-600">Stories Mapped</div>
+              <div className="text-gray-600">{t('stats.stories')}</div>
             </div>
             <div className="text-center">
               <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">150+</div>
-              <div className="text-gray-600">Countries Covered</div>
+              <div className="text-gray-600">{t('stats.countries')}</div>
             </div>
             <div className="text-center">
               <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">98%</div>
-              <div className="text-gray-600">Satisfaction Rate</div>
+              <div className="text-gray-600">{t('stats.satisfaction')}</div>
             </div>
           </div>
         </div>
@@ -420,18 +426,17 @@ function App() {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Live Your Story?
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Join thousands of travelers who've turned their favorite stories into unforgettable adventures. 
-            Your next chapter starts here.
+            {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => document.getElementById('kultrip-widget')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
             >
-              Start Planning Now
+              {t('cta.planNow')}
             </button>
             <a 
               href="https://cal.com/kultrip/oportunidad-de-inversion?" 
@@ -439,7 +444,7 @@ function App() {
               rel="noopener noreferrer"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block text-center"
             >
-              Schedule Consultation
+              {t('cta.consultation')}
             </a>
           </div>
         </div>
@@ -455,8 +460,7 @@ function App() {
                 <span className="text-2xl font-bold">Dreamm Travel</span>
               </div>
               <p className="text-gray-400 mb-6 max-w-md">
-                Transforming favorite stories into real-world adventures. Experience the magic of 
-                storytelling through travel with our innovative approach.
+                {t('footer.description')}
               </p>
               <div className="flex space-x-4">
                 <div className="bg-purple-600 p-2 rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer">
@@ -472,17 +476,17 @@ function App() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
-                <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="#destinations" className="hover:text-white transition-colors">Destinations</a></li>
-                <li><a href="#testimonials" className="hover:text-white transition-colors">Reviews</a></li>
+                <li><a href="#home" className="hover:text-white transition-colors">{t('nav.home')}</a></li>
+                <li><a href="#how-it-works" className="hover:text-white transition-colors">{t('nav.howItWorks')}</a></li>
+                <li><a href="#destinations" className="hover:text-white transition-colors">{t('nav.destinations')}</a></li>
+                <li><a href="#testimonials" className="hover:text-white transition-colors">{t('nav.reviews')}</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h3>
               <div className="space-y-3 text-gray-400">
                 <div className="flex items-center">
                   <Phone className="h-4 w-4 mr-2" />
@@ -501,7 +505,7 @@ function App() {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Dreamm Travel. All rights reserved.</p>
+            <p>{t('footer.copyright')}</p>
           </div>
         </div>
       </footer>
